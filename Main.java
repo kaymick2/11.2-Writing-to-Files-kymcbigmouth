@@ -7,22 +7,22 @@ class Main {
     System.out.println("Enter the name of the file you want to output to.");
     String fileName = fileNameInput.nextLine();
     int fileLines=0;
-    do {
       System.out.println("enter the amount of lines you want to input");
       fileLines = fileNameInput.nextInt();
-      if (fileLines != Integer) {
+     /** if (fileLines != Integer) {
         throw new IllegalArgumentException("Please enter an integer.");
       } else {
         break;
       }
-    } while (!fileNameInput.hasNextInt());
-
+      */
+      Scanner stringScanner=new Scanner(System.in);
     PrintWriter fileOutput = new PrintWriter(fileName);
     for (int lineNo = 0; lineNo < fileLines; lineNo++) {
-      System.out.println("enter a line to input");
-      String userInput = fileNameInput.nextLine();
+      System.out.print("enter a line to input or press CTRL-C to quit");
+      String userInput = stringScanner.nextLine();
       fileOutput.println(userInput);
     }
+    fileOutput.close();
 
   }
 
